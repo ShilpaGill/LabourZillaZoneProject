@@ -1,0 +1,114 @@
+﻿@model IEnumerable<LabourZillaZone.Models.Labour>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="img" style="background-image: url(../Images/labour2.jpg);background-size:cover;background-position:center center; height:100vh;position:fixed;left:0;right:0;z-index:-1;filter:blur(3px);-webkit-filter:blur(3px);"></div>
+
+<h1 style="text-align:center">Labours</h1>
+
+<p>
+    <a asp-action="Create"><button class="bg-info">Create New</button></a>
+</p>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr style="background-color: teal">
+                        <th>
+                            @Html.DisplayNameFor(model => model.FirstName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LastName)
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.Pswd)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cnfrmpswd)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.Profession)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CityAddress)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.StateL)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DailyWages)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TimeDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Available)
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.Lcontact)
+                        </th>*@
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.Ppic)
+                        </th>*@
+                        <th>Profile Pic</th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.RoleL)
+                        </th>*@
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        @*<td>
+            @Html.DisplayFor(modelItem => item.Pswd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cnfrmpswd)
+        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Profession)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CityAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StateL)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DailyWages)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TimeDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Available)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.Lcontact)
+                        </td>*@
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.Ppic)
+                        </td>*@
+                        <td>
+                            <img src="@("/Images/"+item.Ppic)" width="200" height="200" />
+                        </td>
+
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.RoleL)
+                        </td>*@
+                        <td>
+                          @*<a asp-action="Edit" asp-route-id="@item.Id"><button>Edit</button></a> |*@
+                          <a asp-action="Details" asp-route-id="@item.Id"><button>Details</button></a>
+                          @*<a asp-action="Delete" asp-route-id="@item.Id"><button>Delete</button></a>*@
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
